@@ -297,17 +297,6 @@ textarea {
   font-family: 'Work Sans', sans-serif;
 }
 
-#contact li {
-  color: var(--color-dark-2);
-  padding: 1rem;
-  margin: 0;
-}
-
-#contact a {
-  color: var(--color-dark-2);
-  font-family: 'Work Sans', sans-serif;
-}
-
 #contact form {
   display: flex;
   flex-direction: column;
@@ -318,8 +307,18 @@ textarea {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 4rem;
   list-style: none;
+}
+
+#contact li {
+  color: var(--color-dark-2);
+  padding: 0.5rem 1rem;
+  margin: 0;
+}
+
+#contact a {
+  color: var(--color-dark-2);
+  font-family: 'Work Sans', sans-serif;
 }
 
 .i-size {
@@ -333,10 +332,6 @@ label {
 
 .contact-form {
   width: clamp(200px, 70vw, 500px);
-}
-
-.contact-list li {
-  padding: 1rem;
 }
 
 .text {
@@ -408,12 +403,7 @@ label {
     text-align: start;
   }
   #contact ul {
-    margin-top: 2rem;
     flex-direction: column;
-  }
-  #contact li {
-    color: var(--color-dark-2);
-    padding: 0.5rem;
   }
   .project {
     flex-direction: column;
@@ -444,9 +434,6 @@ label {
 @media (max-width: 510px) {
   section {
     padding: 3rem 1rem;
-  }
-  #contact ul {
-    margin-top: 1rem;
   }
   .separator {
     margin: 3rem;
