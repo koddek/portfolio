@@ -32,24 +32,107 @@
 /* #region General */
 
 body {
-  display: flex;
+  z-index: 1;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
   background: rgb(125, 194, 218);
+  display: grid;
+  grid-template-rows: 4rem 3.5rem 3rem repeat(6, auto) 3rem 3.5rem 4rem;
+  grid-template-columns: auto 3rem 3.5rem minmax(200px, 1080px) 3.5rem 3rem auto;
+  grid-template-areas: ". . . . . . ." ". . . . . . ." ". . hero hero hero . ." ". . hero hero hero . ." ". . projs projs projs . ." ". . projs projs projs . ." ". . skills skills skills . ." ". . skills skills skills . ." ". . contact contact contact . ." ". . contact contact contact . ." ". . contact contact contact . ." ". . . copyright . . .";
 }
 
 main {
-  margin-top: 4rem;
   border-radius: 0.5rem;
   box-shadow: 2px 4px 8px var(--color-shadow);
-  max-width: 1080px;
+  grid-row: 3 / 12;
+  grid-column: 3 / 6;
+  z-index: 3;
+}
+
+.robo {
+  width: 100%;
+  z-index: 2;
+}
+
+.robo._1 {
+  grid-area: 2/2 / 4/4;
+  /* transform: rotate(-8deg); */
+  position: relative;
+  right: 5px;
+  bottom: 35px;
+  width: 200%;
+}
+
+.robo._2 {
+  grid-area: 5/5 / 6/7;
+  position: relative;
+  left: 28px;
+  box-shadow: 8px 8px 4px (var(--color-shadow));
+}
+
+.robo._3 {
+  grid-area: 7/2 / 8/4;
+  transform: rotate(-5deg);
+  position: relative;
+  right: 20px;
+  top: 15px;
+  width: 90%;
+}
+
+._hands {
+  grid-area: 7/2 / 8/4;
+  transform: rotate(5deg);
+  position: relative;
+  right: 16px;
+  z-index: 5;
+  width: 25%;
+  left: 40px;
+  top: 30px;
+}
+
+.robo._4 {
+  grid-area: 10/5 / 12/7;
+  position: relative;
+  left: 24px;
+}
+
+._hands2 {
+  grid-area: 10/5 / 12/7;
+  transform: rotate(30deg);
+  position: relative;
+  z-index: 5;
+  width: 55%;
+  left: 10px;
+  top: 65px;
+}
+
+#hero {
+  grid-area: hero;
+  z-index: 4;
+}
+
+#projects {
+  grid-area: projs;
+  z-index: 4;
+}
+
+#skills {
+  grid-area: skills;
+  z-index: 4;
+}
+
+#contact {
+  grid-area: contact;
+  z-index: 4;
 }
 
 #copyright {
+  grid-area: copyright;
   font-family: 'Work Sans', sans-serif;
   color: var(--color-dark-2);
-  margin: 2rem;
-  align-self: center;
+  margin: 1rem auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -197,9 +280,14 @@ section {
 }
 
 .separator {
-  border-top: 1rem dotted var(--color-light-4);
-  width: 50%;
+  border-top: 0.5rem dotted var(--color-light-4);
+  width: 60%;
   margin: 6rem;
+}
+
+hr {
+  width: 50vw;
+  color: var(--color-3);
 }
 
 .proj-image {
@@ -393,7 +481,15 @@ label {
 /* #endregion */
 
 @media (max-width: 768px) {
+  .robo {
+    display: none;
+  }
+  ._hands {
+    display: none;
+  }
   body {
+    grid-template-rows: auto auto 3rem repeat(6, auto) 3rem 3.5rem 4rem;
+    grid-template-columns: auto auto 3.5rem minmax(200px, 1080px) 3.5rem auto auto;
     text-align: center;
   }
   p {
