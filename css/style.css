@@ -484,7 +484,7 @@ label {
   .robo {
     display: none;
   }
-  ._hands {
+  ._hands, ._hands2 {
     display: none;
   }
   body {
