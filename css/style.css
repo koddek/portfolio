@@ -16,6 +16,7 @@
   --color-dark-1__darker: hsl(0, 0%, 10%);
   --color-dark-2: hsl(0, 0%, 40%);
   --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-shadow-0: rgba(0, 0, 0, 0.5);
   --color-shadow-1: rgba(0, 0, 0, 0.1);
   --color-light: #F2F2F2;
   --color-light-2: rgba(255, 255, 255, 0.8);
@@ -32,11 +33,10 @@
 /* #region General */
 
 body {
+  /* opacity: 0.6; */
+  /* background-image: url(/img/bg-3.webp); */
+  background-color:#ffd771;
   z-index: 1;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
-  background: rgb(125, 194, 218);
   display: grid;
   grid-template-rows: 4rem 3.5rem 3rem repeat(6, auto) 3rem 3.5rem 4rem;
   grid-template-columns: auto 3rem 3.5rem minmax(200px, 1080px) 3.5rem 3rem auto;
@@ -45,7 +45,7 @@ body {
 
 main {
   border-radius: 0.5rem;
-  box-shadow: 2px 4px 8px var(--color-shadow);
+  box-shadow: 0px 6px 10px var(--color-shadow-0);
   grid-row: 3 / 12;
   grid-column: 3 / 6;
   z-index: 3;
@@ -58,19 +58,27 @@ main {
 
 .robo._1 {
   grid-area: 2/2 / 4/4;
-  /* transform: rotate(-8deg); */
+  transform: rotate(-8deg);
   position: relative;
-  right: 5px;
-  bottom: 40px;
-  width: 200%;
+  left: 50px;
+  bottom: 35px;
 }
 
-.robo._2 {
+._hands_1 {
+  grid-area: 2/2 / 4/4;
+  transform: rotate(-4deg);
+  position: relative;
+  width: 50%;
+  left: 140px;
+  top: 2px;
+}
+
+/* .robo._2 {
   grid-area: 5/5 / 6/7;
   position: relative;
   left: 28px;
   box-shadow: 8px 8px 4px (var(--color-shadow));
-}
+} */
 
 .robo._3 {
   grid-area: 7/2 / 8/4;
